@@ -1,0 +1,18 @@
+.btn{
+    text-decoration: none;
+    color: brown;
+    border: 3px black solid;
+}
+
+.btn:hover{
+    background: black;
+}
+
+@font-face {
+    font-family: BungeeTint;
+    src: url('BungeeTint-Regular.ttf');
+}
+
+body{
+    font-family: BungeeTint;
+}
