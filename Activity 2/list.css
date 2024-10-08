@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card1{
+    background-color: red;
+}
+
+.container1{
+    background-color: black;
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    height: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.text{
+    line-height: 4px;
+}
+
+p{
+    font-size: 14px;
+}
+
+ul{
+    list-style-type: none;
+}
