@@ -1,35 +1,47 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.card1{
-    background-color: red;
+
+body{
+    background: linear-gradient(to top, rgb(1, 1, 1), white);
+    height: 100vh;
+    padding: 100px;
 }
 
-.container1{
-    background-color: black;
-    width: 95vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-header{
+    height: 80px;
 }
 
-.btn{
-    height: 40px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+.cont2{
+   display: flex;
+   align-items: end;
+   justify-content: end;
+   margin-bottom: 20px;
 }
 
-.text{
-    line-height: 4px;
+.form-label{
+    width: 100px;
+}   
+
+span{
+    font-size: 40px;
+    font-family: 'Times New Roman';
+}
+.card{
+    background: transparent;
 }
 
-p{
-    font-size: 14px;
+.form1{
+    background: transparent;
+    border: none;
 }
 
-ul{
-    list-style-type: none;
+.form1:focus{
+    background: transparent;
+    margin-left: 7px;
+}
+
+.list{
+    background: transparent;
+}
+
+hr{
+    margin-top: -5px;
 }

@@ -1,48 +1,79 @@
-const title = document.getElementById('title');
-const author = document.getElementById('author');
-const button = document.getElementById('submit');
-const ul = document.getElementById('ul-list')
+document.addEventListener('DOMContentLoaded', function(){
+    const title = document.getElementById('validationDefault01');
+const artist = document.getElementById('validationDefault02');
+const save = document.getElementById('save');
+const ul = document.getElementById('ul-list');
+const searchBar = document.querySelector('#search input');
+const btns = document.querySelectorAll('#ul-list');
 
-s
-button.addEventListener('click', ()=>{
-    const newTitle = title.value 
-    const newAuthor = author.value 
+searchBar.addEventListener('keyup', function (e) {
+    const term = e.target.value.toLowerCase(); 
+    const songs = ul.getElementsByTagName('li'); 
+    Array.from(songs).forEach(function (song) {
+        const title = song.querySelector('h6').textContent.toLowerCase(); 
+        const artist = song.querySelector('p').textContent.toLowerCase(); 
 
-    const div0 = document.createElement('div')
-    const button = document.createElement('button')
-    const h3 = document.createElement('h3')
-    const p = document.createElement('p')
-    const div = document.createElement('div')
-    const div2 = document.createElement('div')
-    const li = document.createElement('li')
 
-  
-    button.classList.add('pricebutton', 'btn' , 'btn-dark')
-    div0.classList.add('col-6', 'd-flex', 'justify-content-end' )
-    h3.classList.add('title')
-    p.classList.add()
-    div.classList.add('text', 'col-6')
-    div2.classList.add('row', 'mx-1')
-    li.classList.add('mt-4')
+        if (title.indexOf(term) !== -1 || artist.indexOf(term) !== -1) { 
+            song.style.display = 'block';
+        } else {
+            song.style.display = 'none';
+        }
+    });
+});
 
-    h3.innerHTML = newTitle
-    p.innerHTML = newAuthor
-    button.innerHTML = "Delete+"
 
-    // p.classList.add('songname')
+function addDeleteFunctionality(button) {
+    button.addEventListener('click', function(e) {
+        const li = e.target.closest('li');
+        li.remove();
+    });
+}
+const existingButtons = ul.querySelectorAll('.btn-danger');
+existingButtons.forEach(addDeleteFunctionality);
 
-    div.append(h3)
-    div.append(p)
-    div0.append(button)
-    div2.append(div)
-    div2.append(div0)
-    li.append(div2)
-    ul.append(li)
+save.addEventListener('click', () => {
+    const newTitle = title.value;
+    const newArtist = artist.value;
 
+    const button = document.createElement('button');
+    const div0 = document.createElement('div');
+    const h6 = document.createElement('h6');
+    const p = document.createElement('p');
+    const div = document.createElement('div');
+    const div2 = document.createElement('div');
+    const div3 = document.createElement('div');
+    const div4 = document.createElement('div');
+    const li = document.createElement('li');
+    const hr = document.createElement('hr');
+    
+    button.classList.add('btn', 'btn-dark');
+    div0.classList.add('cont2','col-4', 'mt-3',);
+    div.classList.add('col-4', 'text-start');
+    div2.classList.add('cont-11','row', 'justify-content-between');
+    div3.classList.add('row');
+    div4.classList.add('container', 'text-center');
+    li.classList.add('list','list-group-item');
+
+    h6.innerHTML = newTitle;
+    p.innerHTML = newArtist;
+    button.innerHTML = "Delete";
 
 
     
+    div.append(h6);
+    div.append(p);
+    div2.append(div);
+    div0.append(button);   
+    div2.append(div0);
+    div3.append(div2);
+    div4.append(div3);
+    li.append(div4);
+
+    ul.append(li);
+
+    console.log(button);
+    addDeleteFunctionality(button);
+});
+
 })
-
-
-// console.log(title, author, button)
