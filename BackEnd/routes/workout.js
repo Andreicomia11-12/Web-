@@ -17,12 +17,12 @@ router.get('/', getWorkouts)
 router.get('/:id', singleWorkout)
 
 //Post a new Workout
-router.post('/', createWorkout)
+router.post('/new', createWorkout)
 
-//Deleet a Workout
+//localhost:5000/api/workout/:id
 router.delete('/:id', deleteWorkout)
 
-//Update a Workout
+//localhost:5000/api/workout/:id
 router.patch('/:id', updateWorkout)
 
 module.exports= router

@@ -26,6 +26,7 @@ const mongoose = require('mongoose')
 
 
 //create a workout
+//localhost:5000/api/workout/new
     const createWorkout = async(req, res) => {
         const {title, load, reps} = req.body
         
@@ -52,7 +53,10 @@ const mongoose = require('mongoose')
             return res.status(404).json({error: 'No such workout'})
         }
 
-        res.status(200).json(workout)
+        res.status(200).json({
+            workout,
+            message: 'Workout deleted successfully'
+        })
 
     }
 
@@ -73,7 +77,9 @@ const updateWorkout = async (req, res) => {
         return res.status(404).json({ error: 'No such workout' })
     }
 
-    res.status(200).json(workout)
+    res.status(200).json({
+        message: 'Workout updated successfully'
+})
 }
 
 
