@@ -32,8 +32,9 @@ button:active {
 form {
     width: 50%;
     border: 2px black solid;
-    padding: 200px 50px;
+    padding: 50px;
     border-radius: 20px;
+    height: 400px;
 }
 
 .container {
